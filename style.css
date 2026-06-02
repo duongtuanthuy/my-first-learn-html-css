@@ -1,0 +1,136 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-color: lightgray;
+}
+
+#todo-container {
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+    padding-bottom: 20px;
+    width: 700px;
+    overflow: hidden;
+    border-radius: 0 0 30px 30px;
+    box-shadow: 1px 1px 8px black;
+    border: none;
+    min-height: 400px;
+}
+
+#todo-header {
+    background-color: red;
+    padding: 20px 0;
+    margin: 0;
+    gap: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+#todo-title-text {
+    color: white;
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#todo-create-task {
+    display: flex;
+}
+
+#input-new-task {
+    padding: 5px 20px;
+    box-sizing: border-box;
+    width: 450px;
+    font-size: 1rem;
+    border: none;
+}
+
+#add-btn {
+    margin: 0;
+    padding: 7px 40px;
+    font-size: 1rem;
+    border: none;
+    background-color: #cfcfcf;
+    color: #696969;
+    cursor: pointer;
+}
+
+#add-btn:hover {
+    background-color: #b5b5b5;
+}
+
+#add-btn:active {
+    transform: translateY(1px);
+}
+
+#todo-list {
+    margin: 0;
+    padding: 0;
+}
+
+#ul-el {
+    margin: 0;
+    padding: 0;
+}
+
+.todo-task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #cfcfcf;
+    list-style-type: none;
+    font-size: 1rem;
+    padding: 0 0 0 20px;
+    box-sizing: border-box;
+    height: 45px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.checked-icon {
+    visibility: hidden;
+}
+
+.isChecked .checked-icon{
+    visibility: visible;
+}
+
+#todo-list .todo-task.isChecked .task-text{
+    text-decoration: line-through;
+}
+
+#todo-list .todo-task.isChecked {
+    background-color: #696969;
+    color: whitesmoke;
+}
+
+#todo-list .todo-task.isChecked .delete-btn {
+    color: whitesmoke;
+}
+
+#todo-list li:nth-child(odd) {
+    background-color: #b5b5b5;
+}
+
+#todo-list li:hover {
+    background-color: #9c9c9c;
+}
+
+.delete-btn {
+    background-color: inherit;
+    box-sizing: border-box;
+    font-size: 20px;
+    height: 100%;
+    border: none;
+    margin: 0;
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background-color: red;
+}
