@@ -16,7 +16,7 @@ buttons.forEach(button => {
         } else if (button.id === 'backspace-btn') {
             displayEl.value = displayEl.value.slice(0, -1);
         } else {
-            if (displayEl.value === 'NaN' || displayEl.value === 'ERROR') {
+            if (displayEl.value === 'NaN' || displayEl.value === 'ERROR' || displayEl.value === 'undefined') {
                 displayEl.value = value;
             } else {
                 displayEl.value += value;
