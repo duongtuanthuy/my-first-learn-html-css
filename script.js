@@ -1,3 +1,7 @@
+const projectCards = document.querySelectorAll(".project-card");
+const countElement = document.getElementById("project-count");
+countElement.textContent = projectCards.length;
+
 // Tự động lấy năm hiện tại gán vào Footer
 const yearElement = document.getElementById('current-year');
 const currentYear = new Date().getFullYear();
