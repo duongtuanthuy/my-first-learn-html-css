@@ -1,47 +1,65 @@
 <!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Hành trình học Web</title>
+    <!-- Nhúng font chữ Poppins hiện đại -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="hero-section">
+        <!-- Thêm nhãn trạng thái học tập -->
+        <span class="learning-badge">🌱 Giai đoạn: Newbie Frontend</span>
+        <h1>🚀 Thư viện Dự án Đầu tay</h1>
+        <!-- Cập nhật lời tựa định hướng -->
+        <p>Hành trình xây dựng nền móng UI/UX trước khi tiến sâu hơn vào chuyên ngành Khoa học Máy tính và các hệ thống Backend.</p>
+    </header>
 
-<html>
-    <head>
-        <title>Todo list</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <div id="todo-container">
-            <div id="todo-header">
-                <p id="todo-title-text">My Task //</p>
-                <div id="todo-create-task">
-                    <input id="input-new-task" type="text" placeholder="Title...">
-                    <button id="add-btn">Add</button>
+    <main class="portfolio-container">
+        <!-- Dự án 1: Máy tính -->
+        <a href="./calculator-web-demo/index.html" class="project-card">
+            <!-- Thêm thẻ đánh dấu Demo -->
+            <div class="demo-badge">Beginner Demo</div>
+            
+            <div class="card-icon">🧮</div>
+            <div class="card-content">
+                <h2>Máy tính cá nhân</h2>
+                <p>Bài tập thực hành logic tính toán cơ bản và xử lý chuỗi (String) với JavaScript.</p>
+                <div class="tech-stack">
+                    <span class="tag html">HTML</span>
+                    <span class="tag css">CSS</span>
+                    <span class="tag js">JS</span>
                 </div>
             </div>
-            <div id="todo-list">
-                <ul id="ul-el">
-                    <li class="todo-task">
-                        <span>
-                            <span class="checked-icon">&#10003;</span>
-                            <span class="task-text">Hit the gym</span>
-                        </span>
-                        <button class="delete-btn">&times;</button>
-                    </li>
+        </a>
 
-                    <li class="todo-task">
-                        <span>
-                            <span class="checked-icon">&#10003;</span>
-                            <span class="task-text">Pay bills</span>
-                        </span>
-                        <button class="delete-btn">&times;</button>
-                    </li>
+        <!-- Dự án 2: Todo List -->
+        <a href="./todoList-web-demo/index.html" class="project-card">
+            <div class="demo-badge">Beginner Demo</div>
 
-                    <li class="todo-task">
-                        <span>
-                            <span class="checked-icon">&#10003;</span>
-                            <span class="task-text">Buy eggs</span>
-                        </span>
-                        <button class="delete-btn">&times;</button>
-                    </li>
-                </ul>
+            <div class="card-icon">📝</div>
+            <div class="card-content">
+                <h2>Quản lý Công việc (Todo List)</h2>
+                <p>Ứng dụng thử nghiệm tương tác DOM và lưu trữ dữ liệu đơn giản trên trình duyệt.</p>
+                <div class="tech-stack">
+                    <span class="tag html">HTML</span>
+                    <span class="tag css">CSS</span>
+                    <span class="tag js">JS</span>
+                </div>
             </div>
-        </div>
-        <script src="script.js"></script>
-    </body>
+        </a>
+    </main>
+
+    <div class="disclaimer-section">
+        <p>💡 <strong>Góc chia sẻ:</strong> Đây là những sản phẩm được code trong những ngày đầu tiên tôi làm quen với lập trình Web. Logic xử lý hay cấu trúc file có thể chưa tối ưu nhất, nhưng chúng là những viên gạch nền tảng mà tôi rất tự hào! 🧱</p>
+    </div>
+
+    <footer>
+        <p>&copy; <span id="current-year"></span> - Phát triển bởi DEV Thủy. Code with ☕ and ❤️</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>

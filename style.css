@@ -1,136 +1,178 @@
+/* Thiết lập cơ bản */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    background-color: lightgray;
-}
-
-#todo-container {
-    background-color: #f5f5f5;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8fafc;
+    color: #334155;
     display: flex;
     flex-direction: column;
-    margin-top: 60px;
-    padding-bottom: 20px;
-    width: 700px;
-    overflow: hidden;
-    border-radius: 0 0 30px 30px;
-    box-shadow: 1px 1px 8px black;
-    border: none;
-    min-height: 400px;
+    min-height: 100vh;
 }
 
-#todo-header {
-    background-color: red;
-    padding: 20px 0;
-    margin: 0;
-    gap: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
-}
-
-#todo-title-text {
+/* Phần Header (Hero) */
+.hero-section {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #1e293b, #0f172a);
     color: white;
-    margin: 0;
-    font-size: 24px;
-    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-#todo-create-task {
+.hero-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.hero-section p {
+    font-size: 1.1rem;
+    color: #cbd5e1;
+    font-weight: 300;
+}
+
+/* Lưới chứa các dự án */
+.portfolio-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 50px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    flex: 1;
+}
+
+/* Thẻ Dự án (Card) */
+.project-card {
+    background-color: white;
+    border-radius: 16px;
+    text-decoration: none;
+    color: inherit;
+    overflow: hidden;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
     display: flex;
+    flex-direction: column;
+    border: 1px solid #e2e8f0;
 }
 
-#input-new-task {
-    padding: 5px 20px;
-    box-sizing: border-box;
-    width: 450px;
-    font-size: 1rem;
-    border: none;
+/* Hiệu ứng UX khi di chuột */
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+    border-color: #94a3b8;
 }
 
-#add-btn {
-    margin: 0;
-    padding: 7px 40px;
-    font-size: 1rem;
-    border: none;
-    background-color: #cfcfcf;
-    color: #696969;
-    cursor: pointer;
+.card-icon {
+    font-size: 4rem;
+    text-align: center;
+    padding: 30px 0;
+    background-color: #f1f5f9;
+    border-bottom: 1px solid #e2e8f0;
 }
 
-#add-btn:hover {
-    background-color: #b5b5b5;
-}
-
-#add-btn:active {
-    transform: translateY(1px);
-}
-
-#todo-list {
-    margin: 0;
-    padding: 0;
-}
-
-#ul-el {
-    margin: 0;
-    padding: 0;
-}
-
-.todo-task {
+.card-content {
+    padding: 20px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #cfcfcf;
-    list-style-type: none;
-    font-size: 1rem;
-    padding: 0 0 0 20px;
-    box-sizing: border-box;
-    height: 45px;
-    font-size: 20px;
-    cursor: pointer;
+    flex-direction: column;
+    flex: 1;
 }
 
-.checked-icon {
-    visibility: hidden;
+.card-content h2 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #0f172a;
 }
 
-.isChecked .checked-icon{
-    visibility: visible;
+.card-content p {
+    font-size: 0.95rem;
+    color: #64748b;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    flex: 1;
 }
 
-#todo-list .todo-task.isChecked .task-text{
-    text-decoration: line-through;
+/* Nhãn ngôn ngữ (Tags) */
+.tech-stack {
+    display: flex;
+    gap: 10px;
 }
 
-#todo-list .todo-task.isChecked {
-    background-color: #696969;
-    color: whitesmoke;
+.tag {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 20px;
+    color: white;
 }
 
-#todo-list .todo-task.isChecked .delete-btn {
-    color: whitesmoke;
+.tag.html { background-color: #e34f26; }
+.tag.css { background-color: #264de4; }
+.tag.js { background-color: #f7df1e; color: #000; }
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1e293b;
+    color: #94a3b8;
+    font-size: 0.9rem;
 }
 
-#todo-list li:nth-child(odd) {
-    background-color: #b5b5b5;
+/* --- PHẦN BỔ SUNG CHO GIAO DIỆN NHẬP MÔN --- */
+
+/* Nhãn trạng thái trên Header */
+.learning-badge {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    font-weight: 500;
+    letter-spacing: 0.5px;
 }
 
-#todo-list li:hover {
-    background-color: #9c9c9c;
+/* Đảm bảo thẻ dự án có thể chứa huy hiệu Demo (Rất quan trọng) */
+.project-card {
+    position: relative; /* Dùng để làm mốc tọa độ cho demo-badge */
 }
 
-.delete-btn {
-    background-color: inherit;
-    box-sizing: border-box;
-    font-size: 20px;
-    height: 100%;
-    border: none;
-    margin: 0;
-    padding: 0 20px;
-    cursor: pointer;
+/* Huy hiệu Beginner Demo góc phải thẻ */
+.demo-badge {
+    position: absolute;
+    top: 15px;
+    right: -25px;
+    background-color: #f59e0b; /* Màu cam cảnh báo nhẹ nhàng */
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 5px 25px;
+    transform: rotate(45deg); /* Xoay chéo tạo hiệu ứng dải ruy-băng */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
-.delete-btn:hover {
-    background-color: red;
+/* Hộp thông điệp (Disclaimer) */
+.disclaimer-section {
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+    padding: 20px 30px;
+    background-color: #fffbeb;
+    border: 2px dashed #fbbf24;
+    border-radius: 16px;
+    color: #92400e;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.disclaimer-section p {
+    font-size: 0.95rem;
+    line-height: 1.6;
 }

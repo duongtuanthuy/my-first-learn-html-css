@@ -1,39 +1,8 @@
-const inputNewTask = document.getElementById("input-new-task")
-const addBtn = document.getElementById("add-btn")
-const deleteBtn = document.getElementById("delete-btn")
-const ulEl = document.getElementById("ul-el")
+// Tự động lấy năm hiện tại gán vào Footer
+const yearElement = document.getElementById('current-year');
+const currentYear = new Date().getFullYear();
+yearElement.textContent = currentYear;
 
-function renderList() {
-    let newTask = `
-    <li class="todo-task">
-        <span>
-            <span class="checked-icon">&#10003;</span>
-            <span class="task-text">
-                ${inputNewTask.value}
-            </span>
-        </span>
-        <button class="delete-btn">&times;</button>    
-    </li>
-    `
-    ulEl.innerHTML += newTask
-}
-
-addBtn.addEventListener("click", () => {
-    if (inputNewTask.value === "") {
-        alert("You must to write something")
-    }
-    else {
-        renderList()
-        inputNewTask.value = ""
-    }
-})
-
-ulEl.addEventListener("click", function(object) {
-    if (object.target.classList.contains("delete-btn")) {
-        const taskItem = object.target.parentElement
-        taskItem.remove()
-    }
-    else if (object.target.closest(".todo-task")) {
-        object.target.closest(".todo-task").classList.toggle("isChecked")
-    }
-})
+// Thông điệp ẩn cho những lập trình viên thích F12
+console.log("%c🚀 Chào mừng đến với không gian sáng tạo của tôi!", "color: #0ea5e9; font-size: 16px; font-weight: bold;");
+console.log("Portfolio này được xây dựng hoàn toàn bằng HTML, CSS và Vanilla JS.");

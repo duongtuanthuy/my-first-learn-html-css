@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Todo list</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="todo-container">
+            <div id="todo-header">
+                <p id="todo-title-text">My Task //</p>
+                <div id="todo-create-task">
+                    <input id="input-new-task" type="text" placeholder="Title...">
+                    <button id="add-btn">Add</button>
+                </div>
+            </div>
+            <div id="todo-list">
+                <ul id="ul-el">
+                    <li class="todo-task">
+                        <span>
+                            <span class="checked-icon">&#10003;</span>
+                            <span class="task-text">Hit the gym</span>
+                        </span>
+                        <button class="delete-btn">&times;</button>
+                    </li>
+
+                    <li class="todo-task">
+                        <span>
+                            <span class="checked-icon">&#10003;</span>
+                            <span class="task-text">Pay bills</span>
+                        </span>
+                        <button class="delete-btn">&times;</button>
+                    </li>
+
+                    <li class="todo-task">
+                        <span>
+                            <span class="checked-icon">&#10003;</span>
+                            <span class="task-text">Buy eggs</span>
+                        </span>
+                        <button class="delete-btn">&times;</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
