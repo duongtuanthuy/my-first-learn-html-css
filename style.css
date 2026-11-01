@@ -146,8 +146,8 @@ footer {
 /* Huy hiệu Beginner Demo góc phải thẻ */
 .demo-badge {
     position: absolute;
-    top: 15px;
-    right: -25px;
+    top: 27px;
+    right: -37px;
     background-color: #f59e0b; /* Màu cam cảnh báo nhẹ nhàng */
     color: white;
     font-size: 0.7rem;
