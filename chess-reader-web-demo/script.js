@@ -1,4 +1,4 @@
-const inputPNG = document.getElementById("inputPNG");
+const inputPGN = document.getElementById("inputPGN");
 const translateBtn = document.getElementById("translate-btn");
 const outputEl = document.getElementById("output");
 
@@ -18,9 +18,9 @@ function translateMove(move, isWhite) {
     let phanConLai = (quanCo === "Tốt") ? move:(move.substring(1));
 
     let hanhDong = "di chuyển đến";
-    if (phanConLai.charAt(0) === 'x') hanhDong = "ăn quân tại";
+    if (phanConLai.includes('x')) hanhDong = "ăn quân tại";
 
-    phanConLai = (hanhDong === "ăn quân tại") ? (phanConLai.substring(1)):phanConLai;
+    phanConLai = (hanhDong === "ăn quân tại") ? (phanConLai.replace('x', '')):phanConLai;
 
     let trangThai = '';
     if (phanConLai.charAt(phanConLai.length-1) === '+') trangThai = "và chiếu tướng";
@@ -45,5 +45,17 @@ function translateMove(move, isWhite) {
 }
 
 translateBtn.addEventListener('click', () => {
-    outputEl.textContent = translateMove(inputPNG.value.trim(), false);
+    let moves = inputPGN.value
+    .split(/\d+\.\s*/)
+    .filter(Boolean)
+    .map(item => item.trim())
+    .flatMap(item => item.split(/\s+/));
+    outputEl.innerHTML = '';
+    let isWhite = true;
+    let htmlresult = "";
+    moves.forEach(move => {
+        htmlresult += `<li>${translateMove(move, isWhite)}</li>`;
+        isWhite = !(isWhite);
+    });
+    outputEl.innerHTML = htmlresult;
 })

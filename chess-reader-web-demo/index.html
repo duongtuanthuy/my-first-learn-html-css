@@ -2,13 +2,39 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chess Reader</title>
+    <!-- Nhúng font chữ Poppins hiện đại -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <textarea id="inputPNG" placeholder="Nhập PNG...."></textarea>
-    <button id="translate-btn">Dịch</button>
-    <p id="output"></p>
+    <div class="app-container">
+        <header class="app-header">
+            <h1>♟️ CHESS READER</h1>
+            <p>Trình Dịch Biên Bản Cờ Vua</p>
+        </header>
+
+        <main class="layout-grid">
+            <!-- Cột trái: Nhập liệu -->
+            <section class="input-section">
+                <label for="inputPGN">Nhập PGN vào đây:</label>
+                <textarea id="inputPGN" placeholder="Ví dụ: 1. e4 e5 2. Nf3 Nc6..."></textarea>
+                <button id="translate-btn">Dịch Trận Đấu 🚀</button>
+            </section>
+
+            <!-- Cột phải: Xuất kết quả -->
+            <section class="output-section">
+                <label>Lời văn diễn giải:</label>
+                <div class="output-box">
+                    <ol id="output">
+                        <!-- Kết quả JS sẽ in vào đây -->
+                    </ol>
+                </div>
+            </section>
+        </main>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
