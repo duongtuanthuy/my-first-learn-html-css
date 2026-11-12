@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Art Maker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+        <select id="row">
+            <option value="" disabled selected>Hàng</option>
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="50">30</option>
+        </select>
+        <select id="column">
+            <option value="" disabled selected>Cột</option>
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="50">30</option>
+        </select>
+        <button id="create-btn">Tạo</button>
+    </div>
+    <div>
+        <input id="color-picker" type="color" value="#000000">
+        <button id="pen">Bút</button>
+        <button id="eraser">Tẩy</button>
+    </div>
+    <div id="pixel-table"></div>
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
