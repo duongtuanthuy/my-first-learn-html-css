@@ -6,8 +6,8 @@ const rows = document.getElementById("row");
 const columns = document.getElementById("column");
 const board = document.getElementById("pixel-table");
 const colorPickBtn = document.getElementById("color-picker");
-const penBtn = document.getElementById("pen");
-const eraserBtn = document.getElementById("eraser");
+const penBtn = document.getElementById("pen-btn");
+const eraserBtn = document.getElementById("eraser-btn");
 
 createBtn.addEventListener('click', () => {
     const row = Number(rows.value);
@@ -22,6 +22,7 @@ createBtn.addEventListener('click', () => {
 colorPickBtn.addEventListener("input", (e) => {
     state.currentColor = e.target.value;
     state.currentTool = "pen";
+    board.className = "cursor-pen";
 })
 
 penBtn.addEventListener('click', () => {

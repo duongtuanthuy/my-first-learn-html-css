@@ -86,6 +86,23 @@ button {
     transition: all 0.2s ease; /* Hiệu ứng mượt mà khi hover */
 }
 
+.tool-btn {
+    background-color: #334155;
+    color: #cbd5e1;
+    transition: all 0.15s ease; /* Giúp hiệu ứng chuyển động mượt mà không bị giật cụt */
+}
+
+.tool-btn:hover {
+    background-color: #475569;
+    color: white;
+}
+
+.tool-btn:active {
+    transform: scale(0.92) translateY(2px); 
+    /* scale(0.92): Thu nhỏ nút lại 8% */
+    /* translateY(2px): Đẩy nút chìm xuống dưới 2px */
+}
+
 /* Nút Tạo bảng */
 .primary-btn {
     background-color: #3b82f6;
