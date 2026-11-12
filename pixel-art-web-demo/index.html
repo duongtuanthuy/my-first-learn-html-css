@@ -7,27 +7,42 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div>
-        <select id="row">
-            <option value="" disabled selected>Hàng</option>
-            <option value="10">10</option>
-            <option value="20">20</option>
-            <option value="50">30</option>
-        </select>
-        <select id="column">
-            <option value="" disabled selected>Cột</option>
-            <option value="10">10</option>
-            <option value="20">20</option>
-            <option value="50">30</option>
-        </select>
-        <button id="create-btn">Tạo</button>
+    <div class="app-container">
+        <header>
+            <h1>Pixel Art Maker</h1>
+        </header>
+
+        <div class="toolbar">
+            <div class="tool-group">
+                <select id="row" class="styled-select">
+                    <option value="" disabled selected>Hàng</option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                    <option value="40">40</option>
+                </select>
+                <span class="multiply-icon">✖</span>
+                <select id="column" class="styled-select">
+                    <option value="" disabled selected>Cột</option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                    <option value="40">40</option>
+                </select>
+                <button id="create-btn" class="primary-btn">Tạo Bảng</button>
+            </div>
+
+            <div class="tool-group">
+                <span style="color: #cbd5e1; font-weight: 600; font-size: 0.9rem;">Màu:</span>
+                <input id="color-picker" type="color" value="#000000" title="Chọn màu">
+                <button id="pen-btn" class="tool-btn">✏️ Bút</button>
+                <button id="eraser-btn" class="tool-btn">🧽 Tẩy</button>
+            </div>
+        </div>
+
+        <div class="canvas-container">
+            <div id="pixel-table"></div>
+        </div>
     </div>
-    <div>
-        <input id="color-picker" type="color" value="#000000">
-        <button id="pen">Bút</button>
-        <button id="eraser">Tẩy</button>
-    </div>
-    <div id="pixel-table"></div>
+    
     <script type="module" src="js/main.js"></script>
 </body>
 </html>

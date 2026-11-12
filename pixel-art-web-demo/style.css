@@ -1,11 +1,155 @@
+/* --- GEHIHI --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0f172a; /* Màu nền Dark Mode (Xanh đen) */
+    color: #f8fafc;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+    max-width: 800px;
+}
+
+/* --- TIÊU ĐỀ --- */
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    /* Hiệu ứng chữ màu Gradient */
+    background: linear-gradient(to right, #38bdf8, #818cf8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* --- THANH CÔNG CỤ (TOOLBAR) --- */
+.toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    background-color: #1e293b; /* Màu nền thanh công cụ */
+    padding: 16px 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+    justify-content: center;
+}
+
+.tool-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 16px;
+}
+
+/* Đường vạch chia cách giữa 2 nhóm công cụ */
+.tool-group:not(:last-child) {
+    border-right: 2px solid #334155;
+}
+
+.multiply-icon {
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+/* --- TÙY CHỈNH NÚT BẤM & DROPDOWN --- */
+.styled-select {
+    background-color: #334155;
+    color: white;
+    border: 1px solid #475569;
+    padding: 8px 12px;
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+button {
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease; /* Hiệu ứng mượt mà khi hover */
+}
+
+/* Nút Tạo bảng */
+.primary-btn {
+    background-color: #3b82f6;
+    color: white;
+}
+.primary-btn:hover { background-color: #2563eb; }
+.primary-btn:active { transform: scale(0.95); } /* Hiệu ứng lún xuống khi click */
+
+/* Nút Bút & Tẩy */
+.tool-btn {
+    background-color: #334155;
+    color: #cbd5e1;
+}
+.tool-btn:hover {
+    background-color: #475569;
+    color: white;
+}
+
+/* Tùy chỉnh ô chọn màu cho đẹp hơn */
+#color-picker {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: transparent;
+}
+#color-picker::-webkit-color-swatch-wrapper { padding: 0; }
+#color-picker::-webkit-color-swatch { 
+    border: 2px solid #475569; 
+    border-radius: 8px; 
+}
+
+/* --- KHU VỰC BẢNG VẼ --- */
+.canvas-container {
+    background-color: #1e293b;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+    max-width: 100%;
+    overflow: auto; /* Tự xuất hiện thanh cuộn nếu bảng vẽ quá to */
+    display: flex;
+    justify-content: center;
+}
+
+/* Khung chứa các ô pixel */
+#pixel-table {
+    border: 2px solid #475569;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    background-color: #cbd5e1; /* Màu nền cho khe hở (nếu có) */
+}
+
+/* Code cũ của bạn giữ nguyên */
 .pixel-cell {
     width: 100%;
     height: 100%;
     aspect-ratio: 1;
     background-color: #ffffff;
     border: 1px solid #e2e8f0;
-    box-sizing: border-box; /* Giữ chuẩn kích thước 20x20px không bị tràn viền */
+    box-sizing: border-box; 
     user-select: none;
+    cursor: inherit; /* Quan trọng: để nhận icon SVG từ bảng */
 }
 
 /* Con trỏ chuột hình Cây bút */
